@@ -2,7 +2,11 @@
 class TestCli::CLI
   
   def call
-    puts "pokemon"
+    TestCli::API.new.fetch
+    TestCLI::Berries.all.each do |berry|
+        puts berry.name
+        
+    #puts "pokemon" -Use this to test bin file
     
   end
   

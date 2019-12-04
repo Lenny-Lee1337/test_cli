@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "./lib/test_cli"
+require "./lib/environment"
 
 TestCli::CLI.new.call
