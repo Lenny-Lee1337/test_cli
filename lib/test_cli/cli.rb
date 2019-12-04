@@ -2,7 +2,7 @@
 class TestCli::CLI
   
   def call
-    puts "pokemon's rarity"
+    puts "pokemon"
     
   end
   
