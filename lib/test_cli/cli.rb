@@ -6,8 +6,8 @@ class TestCli::CLI
     TestCLI::Berries.all.each do |berry|
         puts berry.name
         
-    #puts "pokemon" -Use this to test bin file
+      end
+      
     
   end
-  
 end

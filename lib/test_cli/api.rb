@@ -1,6 +1,10 @@
 class TestCli::API
   def fetch
-    key = ENV["API_KEY"]
-   end
+    
+     url ="https://pokeapi.co/api/v2/berry/1/"
+     response = HTTParty.get(url)
+     binding.pry
+     
+  
   end
 end
