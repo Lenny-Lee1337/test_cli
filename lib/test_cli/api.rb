@@ -1,9 +1,19 @@
 class TestCli::API
+  
   def fetch
-    
-     url ="https://pokeapi.co/api/v2/berry/1/"
+    puts "Which berry?"
+     url ="https://pokeapi.co/api/v2/berry/"
      response = HTTParty.get(url)
-     binding.pry
+     response["results"].each do |berry|
+       name = berry["name"]
+       link = berry["url"]
+       puts name
+       puts link
+       
+       #TestCLI::Berries.new(name, link)
+       
+         
+     end
      
   
   end

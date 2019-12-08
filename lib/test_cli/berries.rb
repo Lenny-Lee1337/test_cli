@@ -1,11 +1,10 @@
 class TestCli::Berries
-  attr_accessor :name, :growth_time, :max_harvest
+  attr_accessor :name, :link
   @@all = []
   
-  def initialize(name, growth_time, max_harvest)
+  def initialize(name, link)
       @name = name
-      @growth_time = growth_time
-      @max_harvest = max_harvest
+      @link = link
       @@all << self
   end
     
