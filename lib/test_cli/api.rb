@@ -8,8 +8,7 @@ class TestCli::API
        name = berry["name"]
        link = berry["url"]
        puts name
-       
-       
+    
       input = nil
       while input!= "no"
         puts "Do you want info on this berry? yes/no"
@@ -24,9 +23,10 @@ class TestCli::API
        end
       end
     end
-      
+  end
       
          
      end
-    end
+   
+    
   
