@@ -3,4 +3,7 @@
 require "./lib/environment"
 
 
-TestCli::API.new.fetch
+
+TestCli::CLI.new.call
+TestCli::Berries.all.each do |berry|
+puts berry.name
