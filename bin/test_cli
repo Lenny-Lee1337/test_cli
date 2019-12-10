@@ -3,4 +3,4 @@
 require "./lib/environment"
 
 
-TestCli::API.new.fetch
+TestCli::CLI.new.call
