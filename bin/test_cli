@@ -4,6 +4,4 @@ require "./lib/environment"
 
 
 TestCli::CLI.new.call
-TestCli::Berries.all.each do |berry|
-puts berry.name
-end
+
