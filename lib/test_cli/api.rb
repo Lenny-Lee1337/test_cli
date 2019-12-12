@@ -7,21 +7,9 @@ class TestCli::API
      response["results"].each do |berry|
        name = berry["name"]
        link = berry["url"]
-       puts name
+       TestCli::Berries.new(name, link)
     
-      input = nil
-      while input!= "no"
-        puts "Do you want info on this berry? yes/no"
-        input = gets.strip.downcase
-        case input
-        when "yes"
-          puts link
-          
-        else
-          puts "ok..."
-         
-       end
-      end
+  
     end
   end
       
