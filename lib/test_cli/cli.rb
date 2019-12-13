@@ -5,22 +5,16 @@ class TestCli::CLI
     TestCli::API.new.fetch
      TestCli::Berries.all.each do |berry|
       puts berry.name
+      menu
      end
   end
   
   def menu
         input = nil
       while input!= "no"
-        puts "Do you want info on this berry? yes/no"
+        puts "Which berry?"
         input = gets.strip.downcase
         case input
-        when "yes"
-          puts link
-          
-        else
-          puts "ok..."
-         
-       end
-      end
+      
   end
 end
