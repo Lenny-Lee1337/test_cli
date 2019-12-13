@@ -23,8 +23,8 @@ class TestCli::API
     growth_time =  response["growth_time"]
     max_harvest =  response["max_harvest"]
    
-    
      TestCli::Berries.new(name, link, firmness, growth_time, max_harvest)
+     
   end
       
          
