@@ -8,7 +8,6 @@ class TestCli::API
        name = berry["name"]
        link = berry["url"]
        
-      
       fetch_details(name, link)
     
   
@@ -16,19 +15,14 @@ class TestCli::API
   end
   
   def fetch_details(name, link)
-    
-    response = HTTParty.get(link)
-    
-    firmness =  response["firmness"]
-    growth_time =  response["growth_time"]
-    max_harvest =  response["max_harvest"]
-   
-     TestCli::Details.new(firmness, growth_time, max_harvest)
-     
+     response = HTTParty.get(link)
+     binding.pry
+     response["results"].each do |berry|
+       
+       name = berry["name"]
+       link = berry["url"]
+       TestCli::Berries.new(name, link)
+    end
   end
-      
-         
-     end
-   
-    
   
+end
