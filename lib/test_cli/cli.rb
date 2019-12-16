@@ -3,10 +3,8 @@ class TestCli::CLI
   def call
     
     TestCli::API.new.fetch
-     TestCli::Berries.all.each_with_index do |berry, index|
-      puts "#{berry.name} = #{index}"
-     end
      
+     list_berries
      menu
   end
     
@@ -16,8 +14,9 @@ class TestCli::CLI
       while input != "exit"
        puts "Enter Berry ID:"
         input = gets.strip.downcase
-        case input
-        when "no"
+         if input.to_i > 0 && < TestCli::Berries.all.length
+           #TODO: Pass user input to a list_details method(not yet created)
+       
           puts "Berry's info"
           
         else
@@ -25,5 +24,11 @@ class TestCli::CLI
          
        end
       end
+  end
+  
+  def list_berries
+    TestCli::Berries.all.each.with_index(1) do |berry, index|
+      puts "#{berry.name} = #{index}"
+     end
   end
 end
