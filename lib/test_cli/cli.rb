@@ -11,14 +11,15 @@ class TestCli::CLI
     
     
     def menu
-      puts "Enter berry ID for details or type exit"
+      
       input = nil
       while input != "exit"
+      puts "Enter berry ID for firmness or type exit"
         input = gets.strip.downcase
         if input.to_i > 0 && input.to_i <= TestCli::Berries.all.length
-          #TODO: Pass user input to a list_details method(not yet created)
+          
        
-          puts "Berry's info"
+          list_details
           
         elsif input == "exit"
           puts "Bye"
@@ -36,4 +37,12 @@ class TestCli::CLI
       
      
   end
+  
+  def list_details
+    Test::CLI.new.fetch
+    TestCli::Berries.all.each do |firmness|
+      puts firmness
+    end
+    
+end
 end

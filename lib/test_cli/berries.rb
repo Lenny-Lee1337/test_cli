@@ -2,7 +2,7 @@ class TestCli::Berries
   attr_accessor :name, :link
   @@all = []
   
-    @@all = []
+  
   def initialize(args)
       update(args)
       @@all << self

@@ -9,17 +9,17 @@ class TestCli::API
        link = berry["url"]
        TestCli::Berries.new(berry)
        
-      # fetch_details(name, link)
+       fetch_details(name, link)
     
   
     end
   end
   
-  # def fetch_details(name, link)
-  #   response = HTTParty.get(link)
-  #   response["results"].each do |berry|
+  def fetch_details(name, link)
+    response = HTTParty.get(link)
+    firmness = response["firmness"]["name"]
        
-  #     name = berry["name"]
-  #     link = berry["url"]
-  #     TestCli::Berries.new(name, link)
+      TestCli::Berries.new(link)
+      
     end
+  end

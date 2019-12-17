@@ -21,8 +21,12 @@ Or install it yourself as:
     $ gem install test_cli
 
 ## Usage
+ TYPE IN TERMINAL:
+1. cd test_cli
+2. bundle install
+3. ./bin/test_cli
 
-TODO: Write usage instructions here
+Then follow prompts
 
 ## Development
 
