@@ -5,29 +5,28 @@ class TestCli::CLI
     
     list_berries
      
-      
-      
-     #menu
+       menu
+       
   end
     
     
-    # def menu
-    #   input = nil
-    #   while input != "exit"
+    def menu
+      puts "Enter berry ID for details:"
+      input = nil
+      while input != "exit"
+        input = gets.strip.downcase
+        if input.to_i > 0 && input.to_i <= TestCli::Berries.all.length
+          #TODO: Pass user input to a list_details method(not yet created)
        
-    #     input = gets.strip.downcase
-    #     if input.to_i > 0 && < TestCli::Berries.all.length
-    #       #TODO: Pass user input to a list_details method(not yet created)
-       
-    #       puts "Berry's info"
+          puts "Berry's info"
           
-    #     elsif == "exit"
-    #       puts "Bye"
-    #     else
-    #       puts "Try again"
-    #   end
-    #   end
-  
+        elsif input == "exit"
+          puts "Bye"
+        else
+          puts "Try again"
+        end
+      end
+  end
   
   def list_berries
     TestCli::API.new.fetch
