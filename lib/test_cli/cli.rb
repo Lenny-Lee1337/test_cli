@@ -11,7 +11,7 @@ class TestCli::CLI
     
     
     def menu
-      puts "Enter berry ID for details:"
+      puts "Enter berry ID for details or type exit"
       input = nil
       while input != "exit"
         input = gets.strip.downcase
