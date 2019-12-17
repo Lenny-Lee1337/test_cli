@@ -7,7 +7,7 @@ class TestCli::API
      response["results"].each do |berry|
        name = berry["name"]
        link = berry["url"]
-       TestCli::Berries.new(berry)
+     
        
        fetch_details(name, link)
     
@@ -19,7 +19,7 @@ class TestCli::API
     response = HTTParty.get(link)
     firmness = response["firmness"]["name"]
        
-      TestCli::Berries.new(link)
+      TestCli::Berries.new(name, link, firmness)
       
     end
   end
