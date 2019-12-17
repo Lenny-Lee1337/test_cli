@@ -1,14 +1,17 @@
 class TestCli::Berries
-  attr_accessor :name, :link, :firmness, :growth_time, :max_harvest
+  attr_accessor :name, :link
   @@all = []
   
-  def initialize(name, link, firmness, growth_time, max_harvest)
-      @name = name
-      @link = link
-      @firmness = firmness
-      @growth_time = growth_time
-      @max_harvest = max_harvest
+    @@all = []
+  def initialize(args)
+      update(args)
       @@all << self
+  end
+  
+  def update(args)
+    args.each do |k,v|
+        self.send("#{k}=", v) if self.respond_to?(k)
+    end
   end
     
   def self.all
