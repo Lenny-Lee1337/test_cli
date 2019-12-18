@@ -4,8 +4,7 @@ class TestCli::CLI
     
     TestCli::API.new.fetch
     list_berries
-     
-       menu
+    menu
        
   end
     
@@ -17,14 +16,14 @@ class TestCli::CLI
       puts "Enter berry ID for firmness or type exit"
         input = gets.strip.downcase
         if input.to_i > 0 && input.to_i <= TestCli::Berries.all.length
-          
+          list_details(input)
        
           
           
         elsif input == "exit"
           puts "Bye"
         else
-          puts "Try again"
+          puts "Not a valid ID"
         end
       end
   end
@@ -38,11 +37,11 @@ class TestCli::CLI
      
   end
   
-  def list_details
+  def list_details(index)
     
-    TestCli::Berries.all.each do |firmness|
-      puts firmness
-    end
+    berry = TestCli::Berries.all[index.to_i - 1]
+      puts berry.firmness
+  
     
 end
 end
