@@ -18,8 +18,9 @@ class TestCli::API
   def fetch_details(name, link)
     response = HTTParty.get(link)
     firmness = response["firmness"]["name"]
-       
-      TestCli::Berries.new(name, link, firmness)
+    growth_time = response["growth_time"]
+    max_harvest = response["max_harvest"]
+      TestCli::Berries.new(name, link, firmness, growth_time, max_harvest)
       
     end
   end

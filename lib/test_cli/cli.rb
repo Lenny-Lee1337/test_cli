@@ -13,7 +13,7 @@ class TestCli::CLI
       
       input = nil
       while input != "exit"
-      puts "Enter berry ID for firmness or type exit"
+      puts "Enter berry ID for details or type exit"
         input = gets.strip.downcase
         if input.to_i > 0 && input.to_i <= TestCli::Berries.all.length
           list_details(input)
@@ -40,7 +40,9 @@ class TestCli::CLI
   def list_details(index)
     
     berry = TestCli::Berries.all[index.to_i - 1]
-      puts berry.firmness
+      puts "firmness: #{berry.firmness}"
+      puts "growth time: #{berry.growth_time}"
+      puts "max harvest: #{berry.max_harvest}"
   
     
 end
