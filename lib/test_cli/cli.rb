@@ -39,6 +39,7 @@ class TestCli::CLI
   def list_details(index)
     
     berry = TestCli::Berries.all[index.to_i - 1]
+    TestCli::API.fetch_details(berry)
       puts "name: #{berry.name}"
       puts "firmness: #{berry.firmness}"
       puts "growth time: #{berry.growth_time}"

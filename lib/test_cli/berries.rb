@@ -3,12 +3,10 @@ class TestCli::Berries
   @@all = []
   
   
-  def initialize(name, link, firmness, growth_time, max_harvest)
+  def initialize(name, link)
     @name = name
     @link = link
-    @firmness = firmness
-    @growth_time = growth_time
-    @max_harvest = max_harvest
+   
     @@all << self
     
   end
